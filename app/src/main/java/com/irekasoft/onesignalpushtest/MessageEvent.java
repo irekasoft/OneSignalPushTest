@@ -6,5 +6,10 @@ package com.irekasoft.onesignalpushtest;
 
 public class MessageEvent {
 
+  public final String order_id;
+
+  public MessageEvent(String order_id) {
+    this.order_id = order_id;
+  }
 
 }

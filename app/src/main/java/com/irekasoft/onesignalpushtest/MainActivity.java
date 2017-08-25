@@ -3,7 +3,6 @@ package com.irekasoft.onesignalpushtest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 import android.view.View;
 
@@ -30,8 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
   public void onButtonClick2(View view){
 
-
-
 //    android.support.v4.app.NotificationCompat.Builder mBuilder =
 //      new NotificationCompat.Builder(this)
 //        .setSmallIcon(R.drawable.ic_os_notification_fallback_white_24dp)
@@ -39,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 //        .setContentText("Hello World!");
 
     // TODO: where is the error on the right
+
 
 //    NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
 //    builder.setSmallIcon(R.drawable.ic_wald_poi)

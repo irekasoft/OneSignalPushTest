@@ -6,9 +6,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
 public class PushContentViewActivity extends AppCompatActivity {
 
   TextView textView;
+
+  @Override
+  public void onStart() {
+    super.onStart();
+    EventBus.getDefault().register(this);
+  }
+
+  @Override
+  public void onStop() {
+    super.onStop();
+    EventBus.getDefault().unregister(this);
+  }
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +40,13 @@ public class PushContentViewActivity extends AppCompatActivity {
     Log.i("onCreate", article_id);
 
     textView.setText(article_id);
+
+  }
+
+  @Subscribe
+  public void onMessageEvent(MessageEvent event) {
+
+    textView.setText("GET new notif");
 
   }
 

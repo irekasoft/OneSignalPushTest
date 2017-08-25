@@ -10,6 +10,7 @@ import com.onesignal.OSNotificationAction;
 import com.onesignal.OSNotificationOpenResult;
 import com.onesignal.OneSignal;
 
+import org.greenrobot.eventbus.EventBus;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -54,6 +55,8 @@ public class MyApplication extends Application {
       JSONObject data = notification.payload.additionalData;
       String customKey;
 
+      EventBus.getDefault().post(new MessageEvent(""));
+
       Log.i("notificationReceived","data");
 
       if (data != null) {
@@ -76,6 +79,9 @@ public class MyApplication extends Application {
       Log.i("notificationOpened","data");
 
       if (data != null) {
+
+
+
         Log.i("notificationOpened", "data: " + data.toString());
 
         Toast.makeText(getApplicationContext(), "aa sd asd asdf", Toast.LENGTH_SHORT).show();
